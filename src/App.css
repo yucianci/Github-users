@@ -2,37 +2,191 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+/* Seção do perfil*/
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.perfil-img{
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
 }
 
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.perfil-section{
+  justify-content:  flex-start;
+  text-align: center;
+  background: transparent;
+  width: 500px;
+  height: 400px;
+  border-radius: 10%;
+  margin: 0 auto 50px;
+  padding: 10px;
+  opacity: 0.7;
+  position: relative;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.perfil-section:hover{
+  opacity: initial;
+}
+
+.perfil-section::after{
+  content: '';
+  width: 0%;
+  height:2px;
+  background: #61dafb;
+  position: absolute;
+  top: 0%; left: 50%;
+  border-radius: 10px;
+  transition: all 700ms ease;
+}
+
+.perfil-section:hover::after{
+  left: 0%;
+  width: 100%;
+}
+
+/* Nome de usuário, ID do usuário, Botões do perfil, Link dentro do botão do github e dentro do botão do repositórios */
+
+.username{
+  font-size: 25px;
+}
+
+.userID{
+  font-size: 12px;
+}
+
+.wrapper{
+  margin: 35px 0 0 40px;
+}
+
+.wrapper-link {
+  color: black;
+  text-decoration: none;
+}
+
+.wrapper-link-repo{
+  font-size: smaller;
+  color: black;
+  text-decoration: none;
+}
+
+.wrapper .button{
+  display: inline-block;
+  height: 60px;
+  width: 60px;
+  float: left;
+  margin: 0 5px;
+  overflow: hidden;
+  background: white;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-out;
+}
+
+.wrapper .button:hover{
+  width: 200px;
+}
+
+.wrapper .button .icon{
+  display: inline-block;
+  box-sizing: border-box;
+  text-align: center;
+  height: 60px;
+  width: 60px;
+  border-radius: 50px;
+  line-height: 60px;
+}
+.wrapper .button .icon i{
+  font-size: 25px;
+  line-height: 60px;
+}
+
+.wrapper .button span{
+  color: black;
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 60px;
+  margin-left: 10px;
+}
+
+/*  Janela da tabela dos repositórios públicos */
+
+.window-repos{
+  position: fixed;
+  font-family: 'Quicksand', sans-serif;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 100;
+  overflow:auto;
+}
+
+.content-table{
+  text-align: center;
+  font-size: 18px;
+  margin: 70px auto 25px;
+  border-collapse: collapse;
+  background-color: #2d3436;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(202, 201, 201, 0.15);
+}
+
+.content-table thead tr {
+  background: #636e72;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+}
+
+.content-table th,
+.content-table td {
+  padding: 6px 7.5px;
+}
+
+.content-table tbody tr{
+  border-bottom: 1px solid #636e72;
+}
+
+.content-table tbody tr:nth-of-type(even){
+  background-color: #383f41;
+}
+
+.content-table tbody tr:nth-of-type(even):hover{
+  background-color: #636e72;
+}
+
+.content-table tbody tr:nth-of-type(odd):hover{
+  background-color: #636e72;
+}
+
+.content-table tbody tr:last-of-type{
+  border-bottom:  2px solid #636e72;
+}
+.content-button{
+  width: 100px;
+  height: 50px;
+  margin: 25px 0 100px 0;
+  outline: none;
+  border: none;
+  border-radius: 50px;
+  background: #636e72;
+  transition: background .4s, transform .3s;
+}
+
+.content-button:hover{
+  cursor: pointer;
+  transform: translateY(-.2rem);
+  background: #c0392b;
 }
